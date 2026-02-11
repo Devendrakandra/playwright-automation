@@ -1,14 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "types": ["node", "@playwright/test"],
-    "outDir": "dist",
-    "sourceMap": true
-  },
-  "include": ["tests/**/*.ts", "playwright.config.ts"]
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@components/*": ["pages/components/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@data/*": ["data/*"]
+    }
+  }
 }

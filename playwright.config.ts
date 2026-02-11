@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
@@ -14,9 +17,9 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: 'https://playwright.dev',
+        baseURL: process.env.BASE_URL || 'https://www.saucedemo.com/',
 
-    headless: false,     // browser visible
+    headless: true,     // browser visible
     // slowMo removed 👈
 
     trace: 'on-first-retry',
