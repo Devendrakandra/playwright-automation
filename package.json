@@ -1,0 +1,37 @@
+{
+  "name": "playwright-project",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript project",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+
+    "test:chromium": "playwright test --project=Chromium",
+    "test:chromium:headed": "playwright test --project=Chromium --headed",
+    "test:chromium:ui": "playwright test --ui --project=Chromium",
+    "test:chromium:slow": "playwright test --project=Chromium --headed --slow-mo=300",
+
+    "test:chrome": "playwright test --project=Chromium --channel=chrome",
+    "test:chrome:headed": "playwright test --project=Chromium --channel=chrome --headed",
+
+    "test:one": "playwright test tests/example.spec.ts --project=Chromium",
+    "test:mobiles": "playwright test tests/google-amazon-mobiles.spec.ts --project=Chromium --channel=chrome",
+    "test:grep": "playwright test --project=Chromium -g \"Get started\"",
+    "test:watch": "playwright test --project=Chromium --watch",
+
+    "report": "playwright show-report",
+    "trace:open": "playwright show-trace ./test-results/**/trace.zip",
+
+    "codegen": "playwright codegen --browser=chromium https://playwright.dev",
+    "install:browsers": "playwright install",
+    "clean:results": "rimraf test-results playwright-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.6.3",
+    "rimraf": "^5.0.5"
+  }
+}
